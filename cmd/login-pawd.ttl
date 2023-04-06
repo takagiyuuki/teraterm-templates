@@ -1,0 +1,5 @@
+sprintf2 connectstr '%s:%s /ssh /2 /auth=password /user=%s /passwd=%s /F=%s%s\%s%s' ipaddressstr portstr userstr pswdstr dq dir ini dq
+messagebox connectstr 'test'
+; ini delete
+;sprintf2 connectstr '%s:%s /ssh /2 /auth=password /user=%s /passwd=%s' ipaddressstr portstr userstr pswdstr
+connect connectstr

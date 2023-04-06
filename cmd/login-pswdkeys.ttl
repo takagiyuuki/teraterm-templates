@@ -1,0 +1,2 @@
+sprintf2 connectstr '%s:%s /ssh /2 /auth=publickey /user=%s /passwd=%s /keyfile=%s  /F=%s' ipaddressstr portstr userstr pswdstr sshkeystr ini
+connect connectstr

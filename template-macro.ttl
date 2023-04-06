@@ -1,0 +1,60 @@
+;========================================================
+; Filename    : 
+; Description : 
+; Author      : 
+; Created     : 
+; modified    : 
+;========================================================
+
+; current directory path
+getdir dir
+code2str dq $22
+sprintf2 curdir '%s%s%s' dq dir dq
+; curdir = dq
+;    strconcat curdir dir
+;    strconcat curdir dq
+setdir curdir
+
+; setting file path 
+conf    = 'conf\temlpate_conf.ttl'
+ini     = 'ini\template.ini'
+
+; load config
+include conf
+
+; sagyo number
+inputbox 'input number' hostnamestr
+numbstr = inputstr
+
+; ssh login 
+; passwprd login
+sshlogin = 'cmd\login_pswd.ttl'
+include sshlogin
+
+; start logging
+startlog = 'cmd\start-logs.ttl'
+include startlog
+
+; command file path
+cmd_checkuser       = 'cmd\check-login-user.txt'
+cmd_exit            = 'cmd\exit.txt'
+
+; run command
+openfile=cmd_checkuser
+	call runcmd
+openfile=cmd_exit
+	call runcmd
+end
+
+:runcmd
+fileopen fhandle openfile 0
+while 1
+    filereadln fhandle line
+    if result=1 then
+          break
+    endif
+    wait '#'
+    sendln line
+endwhile
+fileclose fhandle
+return

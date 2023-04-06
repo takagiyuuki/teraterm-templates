@@ -1,0 +1,7 @@
+hostnamestr     = ''
+ipaddressstr    = ''
+portstr         = ''
+userstr         = ''
+pswdstr         = ''
+supswdstr       = ''
+sshkeystr       = ''
