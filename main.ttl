@@ -1,0 +1,57 @@
+;=======================================================
+; ProjectName : "Your project name"
+; Description : "Description yout project"
+; Author      : "Your name"
+; Created     : "Date for create this macro"
+; modified    : "Date fot update this macro"
+;========================================================
+
+; Get current directory path
+getdir dir
+code2str dq $22
+sprintf2 curdir '%s%s%s' dq dir dq
+setdir curdir
+
+; Set file path 
+conf    = 'conf\conf.ttl'
+ini     = 'ini\teraterm.ini'
+
+; Load config paramaters
+include conf
+
+; Login 
+; Only passwprd
+sshlogin = 'cmd\login-pwd.ttl'
+; Only sshkey
+; sshlogin = 'cmd\login-keys.ttl'
+; Passwprd + sshkey
+; sshlogin = 'cmd\login-pswdkeys.ttl'
+include sshlogin
+
+; Start logging
+startlog = 'cmd\start-logs.ttl'
+include startlog
+
+; command file path
+cmd_checkuser       = 'cmd\check-login-user.txt'
+cmd                 = 'cmd\cmd.txt'
+
+; Run commands
+openfile=cmd_checkuser
+	call runcmd
+openfile=cmd
+	call runcmd
+end
+
+:runcmd
+fileopen fhandle openfile 0
+while 1
+    filereadln fhandle line
+    if result=1 then
+          break
+    endif
+    wait '#'
+    sendln line
+endwhile
+fileclose fhandle
+return

@@ -1,6 +1,6 @@
 setdlgpos 0 0
 getdate date "%Y%m%d-%H%M%S"
-sprintf2 log '%s\log\%s_%s_sagyo_%s.log' dir numbstr hostnamestr date
+sprintf2 log '%s\log\%s_%s_sagyo_%s.log' dir hostnamestr date
 ;messagebox log 'test'
 fBin           = 0
 fAppend        = 0
