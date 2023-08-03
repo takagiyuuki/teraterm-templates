@@ -1,9 +1,13 @@
-[English] | 日本語(README.md)
+[English](README.md) | 日本語
 
 # teraterm-templates
 
 リモートログオンクライアント TeraTerm を利用し、対象のサーバーにSSH接続後コマンドを実行するマクロです。
 TeraTermの詳細は以下のサイトで確認してください。
+
+[Tera Term Home Page](https://ttssh2.osdn.jp/#Development)
+
+[MACRO for Tera Term](https://ttssh2.osdn.jp/manual/4/ja/macro/)
 
 ## 使い方
 
