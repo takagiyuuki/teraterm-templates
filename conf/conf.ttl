@@ -1,7 +1,6 @@
-hostnamestr     = ''
-ipaddressstr    = ''
-portstr         = ''
-userstr         = ''
-pswdstr         = ''
-supswdstr       = ''
-sshkeystr       = ''
+hostnamestr     = '' ; server's hostname
+ipaddressstr    = '' ; server's ip address
+portstr         = '' ; server's SSH port number(default: 22)
+userstr         = '' ; server's SSH login user
+pswdstr         = '' ; server's SSH login password
+sshkeystr       = '' ; server's SSH pravate key file(default: keys\id_rsa)

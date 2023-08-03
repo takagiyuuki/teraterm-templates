@@ -1,7 +1,0 @@
-hostnamestr     = 'test-server'
-ipaddressstr    = '127.0.0.1'
-portstr         = '22'
-userstr         = 'testuser'
-pswdstr         = 'password'
-supswdstr       = 'password'
-sshkeystr       = 'keys\id_rsa'
