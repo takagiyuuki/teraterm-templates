@@ -1,5 +1,0 @@
-LANG=C
-hostname
-users
-whoami
-date

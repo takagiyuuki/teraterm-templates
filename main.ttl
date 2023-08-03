@@ -20,12 +20,8 @@ ini     = 'ini\teraterm.ini'
 include conf
 
 ; Login 
-; Only passwprd
-sshlogin = 'cmd\login-pwd.ttl'
-; Only sshkey
-; sshlogin = 'cmd\login-keys.ttl'
-; Passwprd + sshkey
-; sshlogin = 'cmd\login-pswdkeys.ttl'
+; sshlogin = 'cmd\login-pswd.ttl'    ; password authentication
+; sshlogin = 'cmd\login-keys.ttl'    ; public key authentication
 include sshlogin
 
 ; Start logging
@@ -33,12 +29,9 @@ startlog = 'cmd\start-logs.ttl'
 include startlog
 
 ; command file path
-cmd_checkuser       = 'cmd\check-login-user.txt'
 cmd                 = 'cmd\cmd.txt'
 
 ; Run commands
-openfile=cmd_checkuser
-	call runcmd
 openfile=cmd
 	call runcmd
 end

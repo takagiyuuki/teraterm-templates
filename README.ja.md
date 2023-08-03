@@ -23,11 +23,43 @@ supswdstr       = '' #
 sshkeystr       = '' # SSH秘密鍵のファイルパス デフォルトはkeys\id_rsa
 ```
 
-3. 秘密鍵認証をする場合、以下のディレクトリに秘密鍵を保存する
+1. 秘密鍵認証をする場合、以下のディレクトリに秘密鍵を保存する
 `keys\`
 
-4. 実行するコマンドを以下のファイルに記載する
+1. 実行するコマンドを以下のファイルに記載する
+`cmd/cmd.txt`
+デフォルトでは以下のコマンドが記述されています。
+
 `cmd/cmd.txt`
 
-5. ログイン方法を選択する
-6. `main.ttl`を実行する
+```bash
+date
+hostname
+whoami
+echo "hallo. World"
+```
+
+### ログイン方法を選択する
+
+パスワード認証、公開鍵認証どちらか選択する
+
+パスワード認証の場合、`sshlogin = 'cmd\login-pswd.ttl'`のコメントアウトを外す
+公開鍵認証の場合、`sshlogin = 'cmd\login-keys.ttl'`のコメントアウトを外す
+
+`main.ttl`
+
+```ini
+; Login 
+; sshlogin = 'cmd\login-pswd.ttl'    ; password authentication
+; sshlogin = 'cmd\login-keys.ttl'    ; public key authentication
+
+```
+
+### `main.ttl`を実行する
+
+cmand promptで以下のコマンドを実行、または「main.ttl」をダブルクリックする
+
+```batch
+cd ~\teraterm-template
+.\main.ttl
+```
