@@ -7,19 +7,18 @@
 リモートログオンクライアント TeraTerm を利用し、対象のサーバーにSSH接続後コマンドを実行するマクロです。
 TeraTermの詳細は以下のサイトで確認してください。
 
-[Tera Term Home Page](https://ttssh2.osdn.jp/#Development)
-
-[MACRO for Tera Term](https://ttssh2.osdn.jp/manual/4/ja/macro/)
+- [Tera Term Home Page](https://ttssh2.osdn.jp/#Development)
+- [MACRO for Tera Term](https://ttssh2.osdn.jp/manual/4/ja/macro/)
 
 ## 使い方
 
-### リポジトリをダウンロードする
+1. **リポジトリをダウンロードする**
 
 ```bash
 git clone https://github.com/takagiyuuki/teraterm-templates.git
 ```
 
-### サーバー情報を登録する
+2. **サーバー情報を登録する**
 
 `conf/conf.ttl`を編集してサーバー情報を登録する
 
@@ -32,7 +31,7 @@ pswdstr         = '' ; server's SSH login password
 sshkeystr       = '' ; server's SSH pravate key file(default: keys\id_rsa)
 ```
 
-### 実行するコマンドを`cmd/cmd.txt`に記載する
+3. **実行するコマンドを`cmd/cmd.txt`に記載する**
 
 デフォルトでは以下のコマンドが記述されているので、適宜削除・追記する
 
@@ -43,7 +42,7 @@ whoami
 echo "hallo. World"
 ```
 
-### ログイン方法を選択する
+4. **ログイン方法を選択する**
 
 パスワード認証、公開鍵認証のどちらか選択する
 
@@ -56,7 +55,7 @@ echo "hallo. World"
 ; sshlogin = 'cmd\login-keys.ttl'    ; public key authentication
 ```
 
-### `main.ttl`を実行する
+5. **`main.ttl`を実行する**
 
 cmand promptで以下のコマンドを実行、または「main.ttl」をダブルクリックする
 
